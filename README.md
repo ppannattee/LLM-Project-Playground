@@ -51,7 +51,7 @@ Below are 100 project ideas across 10 categories, each honing a critical LLM ski
 #### 1. Understanding and Implementing Transformer Architectures
 
 1. **Implement a Basic Transformer Encoder from Scratch** 💡  
-   - Build a transformer encoder in PyTorch or TensorFlow for text classification (e.g., sentiment analysis).
+   - Build a transformer encoder in PyTorch from scratch for text classification (i.e., sentiment analysis on the [IMDb Movie Reviews dataset](https://ai.stanford.edu/~amaas/data/sentiment/)).
 2. **Build a Simple Language Model with a Transformer Decoder** 
    - Create a decoder-only transformer to generate short text sequences.
 3. **Implement a Seq2Seq Model with Attention for Translation** 
