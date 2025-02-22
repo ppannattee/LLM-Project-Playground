@@ -26,7 +26,7 @@ This repository houses 100 project ideas, grouped into 5 categories, each highli
 
 | Category                  | Focus Area                              | Example Projects                     |
 |---------------------------|-----------------------------------------|--------------------------------------|
-| **Core LLM Development**  | Building and understanding transformers | Mini-GPT, BERT-like MLM, Tiny T5     |
+| **Core LLM Development** 💡| Building and understanding transformers | Mini-GPT, BERT-like MLM, Tiny T5     |
 | **Efficient Training**    | Optimizing speed and memory usage      | LoRA Fine-Tuning, Flash Attention    |
 | **Applications of LLMs**  | Practical NLP solutions                | Chatbot, Code Comment Generator      |
 | **Interpretability**      | Analyzing LLM behavior                 | Attention Heatmaps, Bias Detection   |
@@ -34,10 +34,10 @@ This repository houses 100 project ideas, grouped into 5 categories, each highli
 
 ### Project List
 
-#### Category 1: Core LLM Development
+#### Category 1: Core LLM Development 💡
 Focus: Understanding and implementing transformer-based models, tokenization, and pre-training strategies.
 
-1. **Mini-GPT from Scratch**  
+1. **Mini-GPT from Scratch** 💡  
 
 2. **BERT-like Masked Language Model**  
 
