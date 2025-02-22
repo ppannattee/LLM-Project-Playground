@@ -2,7 +2,7 @@
 
 Welcome to my evolving exploration of Large Language Models (LLMs)—a collection of 100 project ideas designed to deepen my understanding of this field. These concepts were developed with assistance from an LLM (Grok, created by xAI) and are organized into 5 categories, each focusing on essential aspects of LLM technology. From constructing transformer architectures to experimenting with advanced optimization techniques, this repository serves as my practical learning ground for LLMs.
 
-I’m working with a single NVIDIA RTX 3080 (10GB VRAM), so all projects are crafted to run locally, utilizing compact models and efficient methods. As my knowledge grows, I’ll expand this repository with new ideas, implementations, and reflections. Project progress is marked with emojis: ✅ (completed), 💡 (in progress), or unmarked (planned).
+I’m working with a single NVIDIA RTX 3080 (10GB VRAM), so all projects are crafted to run locally, utilizing compact models and efficient methods. As my knowledge grows, I’ll expand this repository with new ideas, implementations, and reflections.
 
 ## Objectives
 
@@ -18,7 +18,7 @@ All projects are tailored to my local setup:
 
 ## Project Ideas
 
-This repository houses 100 project ideas, grouped into 5 categories that each highlight a critical LLM skillset. The [Project Categories Overview](#project-categories-overview) provides a concise summary of these categories, while the [Project List](#project-list) below lists all project titles. For detailed descriptions, objectives, and implementation notes, see the dedicated category folders: `Core_LLM_Development`, `Efficient_Training`, `Applications_of_LLMs`, `Interpretability`, and `Advanced_Research`. Project statuses are indicated with emojis: ✅ (completed), 💡 (in progress), or unmarked (planned).
+This repository houses 100 project ideas, grouped into 5 categories, each highlighting a critical LLM skillset. The Project Categories Overview (#project-categories-overview) provides a concise summary of these categories, while the Project List (#project-list) below lists all project titles. For detailed descriptions, objectives, and implementation notes, refer to the projects’ dedicated category folders: 'Core_LLM_Development', 'Efficient_Training', 'Applications_of_LLMs', 'Interpretability', and 'Advanced_Research'. Project statuses are indicated with emojis: ✅ (completed), 💡 (in progress), or unmarked (planned).
 
 ### Project Categories Overview
 
