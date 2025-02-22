@@ -2,7 +2,7 @@
 
 Welcome to my evolving exploration of Large Language Models (LLMs)—a collection of 100 project ideas designed to deepen my understanding of this field. These concepts were developed with assistance from an LLM (Grok, created by xAI) and are organized into 5 categories, each focusing on essential aspects of LLM technology. From constructing transformer architectures to experimenting with advanced optimization techniques, this repository serves as my practical learning ground for LLMs.
 
-I’m working with a single NVIDIA RTX 3080 (10GB VRAM), so all projects are crafted to run locally, utilizing compact models and efficient methods. As my knowledge grows, I’ll expand this repository with new ideas, implementations, and reflections.
+I’m working with a single NVIDIA RTX 3080 (10GB VRAM), so all projects are designed to run locally, utilizing compact models and efficient methods. As my knowledge grows, I’ll expand this repository with new ideas, implementations, and reflections.
 
 ## Objectives
 
