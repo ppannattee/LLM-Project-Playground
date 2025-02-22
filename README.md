@@ -18,7 +18,9 @@ All projects are tailored to my local setup:
 
 ## Project Ideas
 
-This repository houses 100 project ideas, grouped into 5 categories, each highlighting a critical LLM skillset. The Project Categories Overview (#project-categories-overview) provides a concise summary of these categories, while the Project List (#project-list) below lists all project titles. For detailed descriptions, objectives, and implementation notes, refer to the projects’ dedicated category folders: 'Core_LLM_Development', 'Efficient_Training', 'Applications_of_LLMs', 'Interpretability', and 'Advanced_Research'. Project statuses are indicated with emojis: ✅ (completed), 💡 (in progress), or unmarked (planned).
+This repository houses 100 project ideas, grouped into 5 categories, each highlighting a critical LLM skillset. The Project Categories Overview (#project-categories-overview) provides a concise summary of these categories, while the Project List (#project-list) below lists all project titles. For detailed descriptions, objectives, and implementation notes, refer to the projects’ dedicated category folders: `Core_LLM_Development`, `Efficient_Training`, `Applications_of_LLMs`, `Interpretability`, and `Advanced_Research`.
+
+*Project statuses are indicated with emojis: ✅ (completed), 💡 (in progress), or unmarked (planned).
 
 ### Project Categories Overview
 
