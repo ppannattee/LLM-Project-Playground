@@ -37,9 +37,9 @@ This repository houses 100 project ideas, grouped into 5 categories, each highli
 #### Category 1: Core LLM Development 💡
 Focus: Understanding and implementing transformer-based models, tokenization, and pre-training strategies.
 
-1. **Mini-GPT from Scratch** 💡  
+1. **Mini-GPT from Scratch** ✅  
 
-2. **BERT-like Masked Language Model**  
+2. **BERT-like Masked Language Model** 💡 
 
 3. **Custom Tokenizer Development**  
 
@@ -259,4 +259,4 @@ Focus: Cutting-edge ideas in LLM research and experimentation.
 
 ---
 
-*Last Updated: February 22, 2025*
+*Last Updated: February 23, 2025*
