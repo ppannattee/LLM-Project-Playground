@@ -10,7 +10,7 @@ class CLMDataset(Dataset):
         self.block_size = block_size
 
         # Load the dataset
-        dataset = load_dataset("Salesforce/wikitext", "wikitext-2-raw-v1")
+        dataset = load_dataset("Salesforce/wikitext", "wikitext-103-raw-v1")
 
         # Merge train, validation, and test splits into a single dataset
         dataset = concatenate_datasets([dataset["train"], dataset["validation"], dataset["test"]])

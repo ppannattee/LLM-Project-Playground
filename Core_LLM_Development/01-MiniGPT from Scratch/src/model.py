@@ -3,6 +3,11 @@ import torch.nn as nn
 import torch.nn.functional as F
 import math
 
+import torch
+import torch.nn as nn
+import torch.nn.functional as F
+import math
+
 class CausalSelfAttention(nn.Module):
     def __init__(self, seq_len, embed_dim, num_heads):
         super().__init__()
@@ -14,7 +19,8 @@ class CausalSelfAttention(nn.Module):
         self.qkv_proj = nn.Linear(embed_dim, embed_dim * 3)
         self.out_proj = nn.Linear(embed_dim, embed_dim)
 
-        self.register_buffer("mask", torch.tril(torch.ones(1, 1, seq_len, seq_len)))  # Causal mask
+        # Register causal mask as a buffer so it's moved to the correct device
+        self.register_buffer("mask", torch.tril(torch.ones(seq_len, seq_len)).unsqueeze(0).unsqueeze(0))
 
     def forward(self, x):
         B, T, C = x.shape
@@ -22,20 +28,18 @@ class CausalSelfAttention(nn.Module):
         q, k, v = qkv.split(self.embed_dim, dim=2)
 
         # Reshape dimensions for Multi-head attention
-        k = k.view(B, T, self.num_heads, self.head_dim).transpose(1, 2)
         q = q.view(B, T, self.num_heads, self.head_dim).transpose(1, 2)
+        k = k.view(B, T, self.num_heads, self.head_dim).transpose(1, 2)
         v = v.view(B, T, self.num_heads, self.head_dim).transpose(1, 2)
 
-        # Scaled dot-product attention
-        attn_weights = (q @ k.transpose(-2, -1)) * math.sqrt(k.shape[-1])
-
-        # Apply causal mask (lower triangular mask)
-        causal_mask = torch.tril(torch.ones(T, T, device=x.device)).unsqueeze(0).unsqueeze(0)
-        attn_weights = attn_weights.masked_fill(causal_mask == 0, float('-inf'))
+        # Scaled dot-product attention with causal mask
+        attn_weights = (q @ k.transpose(-2, -1)) * self.scale
+        attn_weights = attn_weights.masked_fill(self.mask[:, :, :T, :T] == 0, float('-inf'))  # Use pre-registered mask
 
         attn_weights = F.softmax(attn_weights, dim=-1)
         attn_output = (attn_weights @ v).transpose(1, 2).contiguous().view(B, T, C)
         return self.out_proj(attn_output)
+
             
 class FeedForward(nn.Module):
     def __init__(self, embed_dim):
