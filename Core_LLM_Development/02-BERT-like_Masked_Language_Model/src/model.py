@@ -3,15 +3,6 @@ import torch.nn as nn
 import torch.nn.functional as F
 import math
 
-import torch
-import torch.nn as nn
-import torch.nn.functional as F
-import math
-
-import torch
-import torch.nn as nn
-import torch.nn.functional as F
-
 class BERTEmbeddings(nn.Module):
     def __init__(self, vocab_size, hidden_size, max_position_embeddings, type_vocab_size, dropout_prob):
         super().__init__()
