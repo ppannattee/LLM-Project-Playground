@@ -107,8 +107,7 @@ def main():
                         help="Choose between 'plot' for loss plot or 'inference' for running a demo inference")
     parser.add_argument('--log_file', type=str, help="Path to the loss log file", default="training_loss.log")
     parser.add_argument('--model_checkpoint', type=str, help="Path to the model checkpoint", default="checkpoints/checkpoint.pt")
-    parser.add_argument('--prompt', type=str, help="Prompt to generate text from", default="A triangle has three sides and"  
-)
+    parser.add_argument('--prompt', type=str, help="Prompt to generate text from", default="In medieval Europe, knights were known for")
     parser.add_argument('--max_length', type=int, help="Max length of generated text", default=100)
 
     args = parser.parse_args()
