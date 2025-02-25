@@ -49,7 +49,7 @@ This setup allows efficient training while keeping enough context in each sequen
 
 Mini-GPT was trained for **3 epochs** with a **batch size of 16**. The training strategy closely follows that of GPT-2, including the use of the **AdamW optimizer** with a **cosine learning rate schedule** and **warmup learning rate**.  
 
-![Training Loss Over Iterations](https://github.com/ppannattee/LLM-Project-Playground/blob/main/Core_LLM_Development/01-MiniGPT%20from%20Scratch/src/training_loss_plot.png?raw=true)
+![Training Loss Over Iterations](https://github.com/ppannattee/LLM-Project-Playground/blob/main/Core_LLM_Development/01-MiniGPT_from_Scratch/src/training_loss_plot.png?raw=true)
 
 During training, the loss curve showed a steady decline, indicating that the model was learning effectively. Below are some example outputs generated using **greedy search**:  
 
