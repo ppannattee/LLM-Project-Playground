@@ -74,6 +74,7 @@ class MiniGPT(nn.Module):
         self.layers = nn.ModuleList([TransformerBlock(seq_len, embed_dim, num_heads) for _ in range(num_layers)])
         self.ln_f = nn.LayerNorm(embed_dim)  # Final LayerNorm
         self.lm_head = nn.Linear(embed_dim, vocab_size, bias=False)
+        self.lm_head.weight = self.embed_tokens.weight
         self.register_buffer("mask", torch.tril(torch.ones(seq_len, seq_len)).unsqueeze(0))  # Causal mask
 
     def forward(self, x):
