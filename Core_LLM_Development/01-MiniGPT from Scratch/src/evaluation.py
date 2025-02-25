@@ -8,9 +8,7 @@ from model import MiniGPT
 from clm_dataset import CLMDataset
 
 def plot_loss_log(log_file):
-    """
-    Plots the loss log from the file
-    """
+
     # Read the log file
     loss_log = []
     with open(log_file, "r") as f:
@@ -32,28 +30,25 @@ def plot_loss_log(log_file):
 
     plt.legend(fontsize=12, loc="upper right", frameon=True, fancybox=True, shadow=True)
 
-    plt.show()
-
     # Save the plot
-    plot_filename = "training_loss_plot.png"  # Specify the file name
-    plt.savefig(plot_filename)  # Save as PNG, you can change the format if needed
+    plot_filename = "training_loss_plot.png"
+    plt.savefig(plot_filename)
+
+    plt.show()
 
 
 
 def run_demo_inference(model, tokenizer, prompt, device, max_length, temperature):
-    """
-    Runs inference on the trained model
-    """
     
     model.eval()  # Set the model to evaluation mode
     
     # Encode the input prompt using the tokenizer
     encoded = tokenizer.encode(prompt)
-    input_ids = torch.tensor([encoded]).to(device)  # Convert to tensor and move to device
+    input_ids = torch.tensor([encoded]).to(device) 
 
     generated = input_ids
     for _ in range(max_length):
-        with torch.no_grad():  # No need to track gradients during inference
+        with torch.no_grad():
             logits = model(generated)
             logits = logits[:, -1, :]  # Get the logits for the last token
             
@@ -63,13 +58,13 @@ def run_demo_inference(model, tokenizer, prompt, device, max_length, temperature
             probs = torch.nn.functional.softmax(logits, dim=-1)
 
             # Use argmax to pick the token with the highest probability (greedy search)
-            next_token = torch.argmax(probs, dim=-1, keepdim=True)  # Greedy choice
+            next_token = torch.argmax(probs, dim=-1, keepdim=True)
             
-            generated = torch.cat((generated, next_token), dim=1)  # Append the generated token
+            generated = torch.cat((generated, next_token), dim=1)
 
             # Optional: Ensure the token is not a special token like <|endoftext|>
             if next_token.item() == tokenizer.encode("<|endoftext|>", add_special_tokens=False)[0]:
-                break  # Stop generation if end of text token is produced
+                break
 
     # Decode the generated token sequence back to text, skipping special tokens like `Ċ`
     generated_text = tokenizer.decode(generated[0].cpu().numpy().tolist(), skip_special_tokens=True)
@@ -78,16 +73,10 @@ def run_demo_inference(model, tokenizer, prompt, device, max_length, temperature
 
 
 def plot_loss(log_file):
-    """
-    Function to handle plotting loss
-    """
     plot_loss_log(log_file)
 
 
 def demo_inference(model_checkpoint, prompt, max_length=100, temperature=0.1):
-    """
-    Function to run the demo inference
-    """
     # Check device
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     print(f"Using device: {device}")
@@ -113,15 +102,13 @@ def demo_inference(model_checkpoint, prompt, max_length=100, temperature=0.1):
 
 
 def main():
-    """
-    Main function to handle command-line argument parsing and function calling
-    """
     parser = argparse.ArgumentParser(description="Evaluation Script")
     parser.add_argument('--mode', type=str, required=True, choices=['plot', 'inference'],
                         help="Choose between 'plot' for loss plot or 'inference' for running a demo inference")
     parser.add_argument('--log_file', type=str, help="Path to the loss log file", default="training_loss.log")
-    parser.add_argument('--model_checkpoint', type=str, help="Path to the model checkpoint", default="checkpoints/checkpoint_36000.pt")
-    parser.add_argument('--prompt', type=str, help="Prompt to generate text from", default="The dog ran across the yard")
+    parser.add_argument('--model_checkpoint', type=str, help="Path to the model checkpoint", default="checkpoints/checkpoint.pt")
+    parser.add_argument('--prompt', type=str, help="Prompt to generate text from", default="A triangle has three sides and"  
+)
     parser.add_argument('--max_length', type=int, help="Max length of generated text", default=100)
 
     args = parser.parse_args()

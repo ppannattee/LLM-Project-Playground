@@ -24,14 +24,14 @@ def set_seed(seed=42):
 
 def save_checkpoint(model, optimizer, iteration, checkpoint_dir, device):
     os.makedirs(checkpoint_dir, exist_ok=True)
-    checkpoint_path = os.path.join(checkpoint_dir, f"checkpoint.pt")
+    checkpoint_path = os.path.join(checkpoint_dir, "checkpoint.pt")
     torch.save({
         "iteration": iteration,
         "model_state_dict": model.state_dict(),
         "optimizer_state_dict": optimizer.state_dict()
     }, checkpoint_path)
 
-    tqdm.write(f"\nCheckpoint saved at iteration {iteration}: {checkpoint_path}")
+    tqdm.write(f"\n### Checkpoint saved at iteration {iteration} ###")
 
     # Generate sample text to verify training progress
     sample_prompt = "The dog ran across the yard"
@@ -94,7 +94,7 @@ def train(model, dataloader, optimizer, scheduler, loss_fn, device, num_epochs, 
                 save_checkpoint(model, optimizer, iteration, checkpoint_dir, device)
                 write_log(log_file, log_list)
 
-    save_checkpoint(model, optimizer, iteration, checkpoint_dir)
+    save_checkpoint(model, optimizer, iteration, checkpoint_dir, device)
     write_log(log_file, log_list)
 
     progress_bar.close()
