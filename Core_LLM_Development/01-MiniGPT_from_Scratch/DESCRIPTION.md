@@ -1,18 +1,19 @@
 # Project 01: Mini-GPT from Scratch  
 
-This project implements **Mini-GPT**, a GPT-style model built from scratch using **PyTorch**. It is trained on the **WikiText-103** dataset for **causal language modeling (CLM)**, a common task for text generation models.  
+This project implements **Mini-GPT**, a simplified version of the GPT-style architecture, built from scratch using **PyTorch**. The model is trained on the **WikiText-103** dataset for **causal language modeling (CLM)**, a common task for text generation.
 
-## Project Structure  
+### Project Structure
 
-The source code is organized in the `src` folder, with the following key files:  
+The source code is organized into the following key files within the `src` folder:
 
-- **`model.py`** – Implements the Mini-GPT architecture.  
-- **`train.py`** – Handles model training.  
-- **`clm_dataset.py`** – Prepares the dataset and defines a PyTorch `Dataset` class for training.  
-- **`evaluation.py`** – Contains evaluation utilities, including:  
-  - **`plot_loss()`** – Plots the training loss over time.  
-  - **`demo_inference()`** – Generates text using the trained model.  
+- **`model.py`**: Implements the architecture of Mini-GPT, defining the transformer blocks, attention layers, and the overall network structure.
+- **`train.py`**: Handles the training pipeline, including model initialization, loss function, optimizer setup, and training loop.
+- **`clm_dataset.py`**: Prepares the **WikiText-103** dataset for training, defining a custom PyTorch `Dataset` class to load and preprocess the data.
+- **`evaluation.py`**: Provides utilities for evaluating the trained model, including:
+  - **`plot_loss()`**: A function to visualize the training loss over epochs.
+  - **`demo_inference()`**: A simple script to generate text using the trained Mini-GPT model, demonstrating its text generation capabilities.
 
+**Note**: Many parts of the code are inspired by Andrej Karpathy’s repository for [implementing GPT-2 from scratch](https://github.com/karpathy/build-nanogpt), which serves as an excellent reference for understanding the core concepts behind transformer-based language models.
 
 ## Model Architecture
 
@@ -47,7 +48,7 @@ This setup allows efficient training while keeping enough context in each sequen
 
 ## Experimental Results
 
-Mini-GPT was trained for **3 epochs** with a **batch size of 16**. The training strategy closely follows that of GPT-2, including the use of the **AdamW optimizer** with a **cosine learning rate schedule** and **warmup learning rate**.  
+Mini-GPT was trained for **3 epochs** using a **batch size of 16**, with **gradient accumulation** applied in a factor of 4 to achieve a **total effective batch size of 64**. The training process follows a strategy similar to that of GPT-2, such as **AdamW optimizer**, **Cosine learning rate schedule**, and **Learning rate warmup**.
 
 ![Training Loss Over Iterations](https://github.com/ppannattee/LLM-Project-Playground/blob/main/Core_LLM_Development/01-MiniGPT_from_Scratch/src/training_loss_plot.png?raw=true)
 
@@ -55,20 +56,25 @@ During training, the loss curve showed a steady decline, indicating that the mod
 
 ### Sample Outputs  
 
-#### **Prompt:** "The Great Wall of China was"  
-**Generated Text:**  
-The Great Wall of China was constructed to the north of the city. The city was built in the late 19th century and was the site of the first Chinese settlement in the world. The city was the capital of the Chinese Empire and was the capital of the Chinese Empire. The city was the capital of the Chinese Empire and was the capital of the Chinese Empire...  
+#### **Prompt:** "In the 18th century, scientists discovered that"  
+**Generated Text:**
+```  
+In the 18th century, scientists discovered that the planet was a giant planet , and that the planet was a giant planet . The planet was discovered in 1869 by the French astronomer Jean @-@ Jacques Leclerc , who had discovered the planet in 1869 . Leclerc had discovered the planet in 1869...
+```
 
-#### **Prompt:** "In 1492, Christopher Columbus sailed"  
-**Generated Text:**  
-In 1492, Christopher Columbus sailed for the East Indies, where he was sent to the East Indies.  
-= = = = East Indies = = = =  
-In the meantime, the East Indies had been in the hands of the East Indies, and the East Indies had been in the hands of the East Indies. The East Indies had been in the hands of the East Indies, and the East Indies had been in the hands of the East Indies, and had been in the hands of the East Indies...  
+#### **Prompt:** "The Industrial Revolution led to significant advancements in the production of"  
+**Generated Text:**
+```
+The Industrial Revolution led to significant advancements in the production of the textile industry .
+ = = = Industrial Revolution = = =
+ The Industrial Revolution brought a new wave of economic growth and the growth of the textile industry . The Industrial Revolution brought about a new generation of textile production to the United States . The Industrial Revolution brought about a new generation of textile production to the United States . The Industrial Revolution brought about a new generation of textile production to the United States...
+```
 
-#### **Prompt:** "In medieval Europe, knights were known for"  
+#### **Prompt:** "The theory of evolution by natural selection was proposed by"  
 **Generated Text:**  
-In medieval Europe, knights were known for their own good, and the king's own son, the Duke of York, was the first king to be crowned. The king's father, William, was the first king to be crowned king. The king's father, William, was the first king to be crowned king. The king's father, William, was the first king to be crowned king...  
-
+```
+The theory of evolution by natural selection was proposed by the American biologist William Gould in 1851 . Gould 's theory was based on the idea that evolution was a natural selection . Gould 's theory was based on the idea that evolution was a natural selection...
+```
 ---
 
 ## Discussion 
