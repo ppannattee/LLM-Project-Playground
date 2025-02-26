@@ -56,21 +56,36 @@ During training, the loss curve showed a steady decline, indicating that the mod
 
 ### Sample Outputs  
 
-#### **Prompt:** "In the 18th century, scientists discovered that"  
+**Prompt:**
+```
+In the 18th century, scientists discovered that
+```
+
 **Generated Text:**
 ```  
 In the 18th century, scientists discovered that the planet was a giant planet , and that the planet was a giant planet . The planet was discovered in 1869 by the French astronomer Jean @-@ Jacques Leclerc , who had discovered the planet in 1869 . Leclerc had discovered the planet in 1869...
 ```
 
-#### **Prompt:** "The Industrial Revolution led to significant advancements in the production of"  
+---
+
+**Prompt:**
+```
+The Industrial Revolution led to significant advancements in the production of
+```
+
 **Generated Text:**
 ```
 The Industrial Revolution led to significant advancements in the production of the textile industry .
  = = = Industrial Revolution = = =
  The Industrial Revolution brought a new wave of economic growth and the growth of the textile industry . The Industrial Revolution brought about a new generation of textile production to the United States . The Industrial Revolution brought about a new generation of textile production to the United States . The Industrial Revolution brought about a new generation of textile production to the United States...
 ```
+---
 
-#### **Prompt:** "The theory of evolution by natural selection was proposed by"  
+**Prompt:**
+```
+The theory of evolution by natural selection was proposed by
+```
+
 **Generated Text:**  
 ```
 The theory of evolution by natural selection was proposed by the American biologist William Gould in 1851 . Gould 's theory was based on the idea that evolution was a natural selection . Gould 's theory was based on the idea that evolution was a natural selection...
