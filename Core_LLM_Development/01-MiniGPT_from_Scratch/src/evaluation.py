@@ -38,22 +38,22 @@ def plot_loss_log(log_file):
 
 
 
-def run_demo_inference(model, tokenizer, prompt, device, max_length, temperature):
+def run_demo_inference(model, tokenizer, prompt, device, max_length, temperature=0.5):
     
-    model.eval()  # Set the model to evaluation mode
+    model.eval()
     
     # Encode the input prompt using the tokenizer
     encoded = tokenizer.encode(prompt)
     input_ids = torch.tensor([encoded]).to(device) 
 
     generated = input_ids
-    for _ in range(max_length):
+    for _ in range(max_length-input_ids.shape[1]):
         with torch.no_grad():
             logits = model(generated)
             logits = logits[:, -1, :]  # Get the logits for the last token
             
             # Apply temperature (higher values = more randomness)
-            #logits = logits / temperature
+            logits = logits / temperature
             
             probs = torch.nn.functional.softmax(logits, dim=-1)
 
@@ -62,12 +62,10 @@ def run_demo_inference(model, tokenizer, prompt, device, max_length, temperature
             
             generated = torch.cat((generated, next_token), dim=1)
 
-            # Optional: Ensure the token is not a special token like <|endoftext|>
-            if next_token.item() == tokenizer.encode("<|endoftext|>", add_special_tokens=False)[0]:
+            if next_token.item() == tokenizer.encode("<|endoftext|>")[0]:
                 break
 
-    # Decode the generated token sequence back to text, skipping special tokens like `Ċ`
-    generated_text = tokenizer.decode(generated[0].cpu().numpy().tolist(), skip_special_tokens=True)
+    generated_text = tokenizer.decode(generated[0].cpu().numpy().tolist())
 
     return generated_text
 
@@ -76,7 +74,7 @@ def plot_loss(log_file):
     plot_loss_log(log_file)
 
 
-def demo_inference(model_checkpoint, prompt, max_length=100, temperature=0.1):
+def demo_inference(model_checkpoint, prompt, max_length=100):
     # Check device
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     print(f"Using device: {device}")
@@ -96,7 +94,7 @@ def demo_inference(model_checkpoint, prompt, max_length=100, temperature=0.1):
     model.load_state_dict(checkpoint["model_state_dict"])
 
     # Run demo inference
-    generated_text = run_demo_inference(model, tokenizer, prompt, device, max_length=max_length, temperature=temperature)
+    generated_text = run_demo_inference(model, tokenizer, prompt, device, max_length=max_length)
     print("\nGenerated Text:")
     print(generated_text)
 
@@ -107,8 +105,8 @@ def main():
                         help="Choose between 'plot' for loss plot or 'inference' for running a demo inference")
     parser.add_argument('--log_file', type=str, help="Path to the loss log file", default="training_loss.log")
     parser.add_argument('--model_checkpoint', type=str, help="Path to the model checkpoint", default="checkpoints/checkpoint.pt")
-    parser.add_argument('--prompt', type=str, help="Prompt to generate text from", default="In medieval Europe, knights were known for")
-    parser.add_argument('--max_length', type=int, help="Max length of generated text", default=100)
+    parser.add_argument('--prompt', type=str, help="Prompt to generate text from", default="The theory of evolution by natural selection was proposed by")
+    parser.add_argument('--max_length', type=int, help="Max length of generated text", default=128)
 
     args = parser.parse_args()
 
