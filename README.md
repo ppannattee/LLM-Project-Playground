@@ -37,7 +37,7 @@ This repository houses 100 project ideas, grouped into 5 categories, each highli
 #### Category 1: Core LLM Development 💡
 Focus: Understanding and implementing transformer-based models, tokenization, and pre-training strategies.
 
-1. **Mini-GPT from Scratch** ✅ [[Details](https://github.com/ppannattee/LLM-Project-Playground/blob/main/Core_LLM_Development/01-MiniGPT_from_Scratch/DESCRIPTION.md)] 
+1. **Mini-GPT from Scratch** ✅ [[Details](https://github.com/ppannattee/LLM-Project-Playground/blob/main/Core_LLM_Development/project-01/description.md)] 
 
 2. **BERT-like Masked Language Model** 💡 
 
