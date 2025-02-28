@@ -4,7 +4,7 @@ This project implements **Mini-GPT**, a simplified version of the GPT-style arch
 
 ### Project Structure
 
-The source code is organized into the following key files within the `src` folder:
+The source code is organized into the following files within the `src` folder:
 
 - **`model.py`**: Implements the architecture of Mini-GPT, defining the transformer blocks, attention layers, and the overall network structure.
 - **`train.py`**: Handles the training pipeline, including model initialization, loss function, optimizer setup, and training loop.
