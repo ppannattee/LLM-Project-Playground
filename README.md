@@ -10,4 +10,14 @@ As I continue learning, I will expand this repository with new ideas, implementa
 
 ## Project List
 
-Below is a list of projects along with their statuses, indicated by emojis: ✅ (completed), 💡 (in progress), or 📑 (planned).*
+Below is a list of projects, each accompanied by its current status, indicated by emojis: ✅ (completed), 💡 (in progress), or 📑 (planned).
+
+- **Mini-GPT from Scratch** ✅  
+[[Project Details](https://github.com/ppannattee/LLM-Project-Playground/blob/main/projects/Mini-GPT/description.md)]
+
+  - This project implements **Mini-GPT**, a simplified GPT-style architecture built from scratch using **PyTorch**, trained on the **WikiText-103** dataset for **Causal Language Modeling (CLM)**.
+
+- **TinyTeller: A GPT-2 Children's Short Story Generator** ✅  
+  [[Project Details](https://github.com/ppannattee/LLM-Project-Playground/blob/main/projects/TinyTeller/description.md)]
+  
+  - This project implements **TinyTeller**, a fine-tuned **GPT-2 (small)** model for generating short stories for children, using the **TinyStories dataset**.
