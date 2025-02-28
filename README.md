@@ -8,6 +8,6 @@ As I continue learning, I will expand this repository with new ideas, implementa
 
 ---
 
-### Project List
+## Project List
 
 Below is a list of projects along with their statuses, indicated by emojis: ✅ (completed), 💡 (in progress), or 📑 (planned).*
