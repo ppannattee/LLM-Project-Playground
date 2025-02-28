@@ -1,4 +1,4 @@
-# Project 01: Mini-GPT from Scratch  
+# Mini-GPT from Scratch  
 
 This project implements **Mini-GPT**, a simplified version of the GPT-style architecture, built from scratch using **PyTorch**. The model is trained on the **WikiText-103** dataset for **causal language modeling (CLM)**, a common task for text generation.
 
