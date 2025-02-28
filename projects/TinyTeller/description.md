@@ -1,4 +1,4 @@
-# Project 04: TinyTeller: A GPT-2 Children's Short Story Generator
+# TinyTeller: A GPT-2 Children's Short Story Generator
 
 This project implements **TinyTeller**, a fine-tuned version of **GPT-2 (small)** designed to generate simple short stories for children. It leverages the **TinyStories dataset**, which contains brief narratives aimed at young audiences, to fine-tune the model's language generation capabilities.
 
