@@ -21,3 +21,5 @@ Below is a list of projects, each accompanied by its current status, indicated b
   [[Project Details](https://github.com/ppannattee/LLM-Project-Playground/blob/main/projects/TinyTeller/description.md)]
   
   - This project implements **TinyTeller**, a fine-tuned **GPT-2 (small)** model for generating short stories for children, using the **TinyStories dataset**.
+  
+- **Building a Simple AI Assistant with Supervised Fine-Tuning (SFT)** 📑  
