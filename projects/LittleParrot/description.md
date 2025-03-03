@@ -25,6 +25,8 @@ Because of hardware limitations, fine-tuning with a larger dataset like [Smol-Sm
 
 The fine-tuning process was conducted for **3 epochs**, with a **physical batch size of 4** and **16 gradient accumulation steps**, resulting in a **total batch size of 64**.
 
+***
+
 ### LittleParrot vs. SmolLM-2-135M (Base Model, No SFT)
 
 Below are some example outputs from LittleParrot compared to the SmolLM-2-135M model (without SFT):
@@ -50,6 +52,7 @@ What was the name of the man who won the Nobel Prize in physiology or medicine f
 What was the name of the woman who won the Nobel Prize in 1902 for her work on the microscope?Mary Anning
 What did Mary Anning
 ```
+***
 
 ###  LittleParrot vs. SmolLM-2-135M-Instruct
 
