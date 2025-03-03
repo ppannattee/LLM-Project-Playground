@@ -13,9 +13,9 @@ The source code is organized into the following files within the `src` folder:
 
 ## Model Architecture and Dataset
 
-LittleParrot is based on the SmolLM-2-135M model, a compact language model released by Hugging Face.
+LittleParrot is based on the [**SmolLM-2-135M**](https://huggingface.co/HuggingFaceTB/SmolLM2-135M) model, a compact language model released by Hugging Face.
 
-To create LittleParrot, the base pretrained SmolLM-2-135M model was fine-tuned using the [Databricks Dolly 15K (DD15K) dataset](https://huggingface.co/datasets/databricks/databricks-dolly-15k), which contains ~15,000 instruction-response pairs. This dataset is smaller and more manageable than the one used for **SmolLM-2-135M-Instruct**, which was fine-tuned with the Smol-Smoltalk dataset—a much larger set of over 460,000 instruction-response pairs.
+To create LittleParrot, the base pretrained SmolLM-2-135M model was fine-tuned using the [Databricks Dolly 15K (DD15K) dataset](https://huggingface.co/datasets/databricks/databricks-dolly-15k), which contains ~15,000 instruction-response pairs. This dataset is smaller and more manageable than the one used for [**SmolLM-2-135M-Instruct**](https://huggingface.co/HuggingFaceTB/SmolLM2-135M-Instruct##training), which was fine-tuned with the Smol-Smoltalk dataset—a much larger set of over 460,000 instruction-response pairs.
 
 Because of hardware limitations, fine-tuning with a larger dataset like [Smol-Smoltalk](https://huggingface.co/datasets/HuggingFaceTB/smol-smoltalk) was not feasible in this project, making DD15K a practical choice for this exploration of SFT.
 
@@ -25,11 +25,11 @@ Because of hardware limitations, fine-tuning with a larger dataset like [Smol-Sm
 
 The fine-tuning process was conducted for **3 epochs**, with a **physical batch size of 4** and **16 gradient accumulation steps**, resulting in a **total batch size of 64**.
 
-### Comparison of LittleParrot vs. SmolLM-2-135M (Base Model, No SFT)
+### LittleParrot vs. SmolLM-2-135M (Base Model, No SFT)
 
 Below are some example outputs from LittleParrot compared to the SmolLM-2-135M model (without SFT):
 
-**Propt**: Who was the first woman to win a Nobel Prize?
+**Prompt**: Who was the first woman to win a Nobel Prize?
 
 **LittleParrot 🦜**:
 ```
@@ -53,12 +53,12 @@ What did Mary Anning
 
 ###  LittleParrot vs. SmolLM-2-135M-Instruct
 
-Below are example outputs from LittleParrot compared to the [SmolLM-2-135M-Instruct](https://huggingface.co/HuggingFaceTB/SmolLM2-135M-Instruct##training)
+Below are example outputs from LittleParrot compared to the SmolLM-2-135M-Instruct
 
 ***
 
 
-**Propt**: Who was the first woman to win a Nobel Prize?
+**Prompt**: Who was the first woman to win a Nobel Prize?
 
 **LittleParrot 🦜**:
 ```
@@ -72,7 +72,7 @@ The Nobel Prize in Physiology or Medicine was first awarded in 1903 to Marie Sk�
 
 ***
 
-**Propt**: What planet is closest to the sun?
+**Prompt**: What planet is closest to the sun?
 
 **LittleParrot 🦜**:
 ```
@@ -87,7 +87,7 @@ The closest star to the Sun is Proxima Centauri (❌), which is approximately 4.
 
 ***
 
-**Propt**: What is the capital of Canada?
+**Prompt**: What is the capital of Canada?
 
 **LittleParrot 🦜**
 ```
