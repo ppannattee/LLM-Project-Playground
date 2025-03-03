@@ -22,6 +22,7 @@ Below is a list of projects, each accompanied by its current status, indicated b
   
   - Implements **TinyTeller**, a fine-tuned **GPT-2 (small)** model for generating short stories for children, using the **TinyStories dataset**.
   
-- **Building a Simple AI Assistant with Supervised Fine-Tuning** ✅  
+- **LittleParrot 🦜: A Basic AI Assistant Trained Using Supervised Fine-Tuning** ✅  
   [[Project Details](https://github.com/ppannattee/LLM-Project-Playground/blob/main/projects/LittleParrot/description.md)]
+
   - Implements **LittleParrot** 🦜, an AI assistant fine-tuned with **Supervised Fine-Tuning (SFT)** on **the SmolLM-2-135**.
