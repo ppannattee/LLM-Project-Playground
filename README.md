@@ -26,3 +26,7 @@ Below is a list of projects, each accompanied by its current status, indicated b
   [[Project Details](https://github.com/ppannattee/LLM-Project-Playground/blob/main/projects/LittleParrot/description.md)]
 
   - Implements **LittleParrot** 🦜, an AI assistant fine-tuned with **Supervised Fine-Tuning (SFT)** on **the SmolLM-2-135**.
+
+- **LittleParrot+ 🦜🦜: Enhanced with LoRA for Greater Performance** 💡  
+  - Presents **LittleParrot+** 🦜🦜, an improved version of the original assistant, fine-tuned with **SFT** using **LoRA**.  
+  - Utilizes a larger base model, **SmolLM-2-360**, while maintaining comparable training time.
