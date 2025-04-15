@@ -30,3 +30,5 @@ Below is a list of projects, each accompanied by its current status, indicated b
 - **LittleParrot+ 🦜🦜: Enhanced with LoRA for Greater Performance** 💡  
   - Presents **LittleParrot+** 🦜🦜, an improved version of the original assistant, fine-tuned with **SFT** using **LoRA**.  
   - Utilizes a larger base model, **SmolLM-2-360**, while maintaining comparable training time.
+
+- **Simple RAG from scratch** 📑
